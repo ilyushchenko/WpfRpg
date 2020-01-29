@@ -1,0 +1,63 @@
+﻿<Page x:Class="UI.Views.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:UI.Views"
+      xmlns:vm="clr-namespace:UI.ViewModels"
+      xmlns:controls="clr-namespace:UI.Controls"
+      xmlns:internal="clr-namespace:UI.Internal"
+      mc:Ignorable="d"
+      Title="GamePageModel" MinHeight="700" MinWidth="1000">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"
+
+              Grid.ColumnSpan="3"
+              VerticalAlignment="Center">
+
+            <Grid.Background>
+                <ImageBrush ImageSource="../Images/Gui/HeaderTexture.jpg"
+                            Viewport="0,0,0.2,1"
+                            Stretch="UniformToFill"
+                            TileMode="FlipX"
+                />
+            </Grid.Background>
+
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Margin="20,0,0,0">
+                <Image Source="../Images/Gui/Time.png" MaxHeight="50" />
+                <Label Content="Time left: "
+                       VerticalAlignment="Center" Foreground="White" FontSize="20" />
+                <Label Content="{Binding Countdown}"
+                       VerticalAlignment="Center"
+                       Foreground="#FFADFD4D"
+                       FontSize="24"
+                       FontWeight="Bold" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Label Content="Round: "
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       FontSize="20" />
+                <Label Content="{Binding Round}"
+                       VerticalAlignment="Center"
+                       Foreground="#FFADFD4D"
+                       FontSize="24" FontWeight="Bold" />
+                <ToggleButton Content="Next round"
+                              Width="100" Height="40"
+                              Margin="10"
+                              Command="{Binding FinishRoundCommand}" />
+            </StackPanel>
+        </Grid>
+
+        <Frame Grid.Row="1" x:Name="GameFrame" />
+    </Grid>
+</Page>

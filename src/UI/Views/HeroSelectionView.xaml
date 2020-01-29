@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="UI.Views.HeroSelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:UI.Views"
+             xmlns:converters="clr-namespace:UI.Converters"
+             xmlns:viewModels="clr-namespace:UI.ViewModels"
+             mc:Ignorable="d"
+             MinHeight="450" MinWidth="800" d:DataContext="{d:DesignInstance viewModels:HeroSelectionViewModel }">
+
+    <UserControl.Resources>
+        <converters:CHeroTypeToImageConverter x:Key="HeroTypeToImageConverter" />
+    </UserControl.Resources>
+
+    <Grid Margin="10">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel>
+            <Image Source="{Binding SelectedHero.Type, Converter={StaticResource HeroTypeToImageConverter}}" MaxHeight="200" HorizontalAlignment="Center" />
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Name" />
+                <Label Content="{Binding SelectedHero.Name}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Health" />
+                <Label Content="{Binding SelectedHero.HealthPoints}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Steps per pound" />
+                <Label Content="{Binding SelectedHero.MovingEnergy}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Description" />
+                <Label Content="{Binding SelectedHero.Description}" />
+            </StackPanel>
+        </StackPanel>
+
+
+
+        <Grid Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <GroupBox Grid.Row="0"
+                      Header="Heroes">
+
+
+                <ListBox ItemsSource="{Binding Heroes}"
+                         SelectedItem="{Binding SelectedHero}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="5" Orientation="Horizontal">
+                                <Image MaxWidth="50" MaxHeight="50"
+                                       Source="{Binding Type, Converter={StaticResource HeroTypeToImageConverter}}" />
+                                <TextBlock FontSize="16" Text="{Binding Name}"
+                                           HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+
+            </GroupBox>
+
+            <Button Grid.Row="1"
+                    Content="Play"
+                    Command="{Binding PlayCommand}"
+                    Margin="10" />
+
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0538018F-1F0E-43F9-A0C4-D91722621668}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UI</RootNamespace>
+    <AssemblyName>UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AuthController.cs" />
+    <Compile Include="CConstants.cs" />
+    <Compile Include="Connected Services\GameServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CellControl.xaml.cs">
+      <DependentUpon>CellControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GameProgressBar.xaml.cs">
+      <DependentUpon>GameProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MapControl.xaml.cs">
+      <DependentUpon>MapControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\HeroTypeToImageConverter.cs" />
+    <Compile Include="Converters\ItemIdToImageConverter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Events\CUnitPositionChangedEventArgs.cs" />
+    <Compile Include="Extensions\CBitmapExtensions.cs" />
+    <Compile Include="Factories\CItemsTextureFactory.cs" />
+    <Compile Include="Factories\CTerrainTextureFactory.cs" />
+    <Compile Include="Factories\CUnitTextureFactory.cs" />
+    <Compile Include="Interfaces\IGameChoiceProvider.cs" />
+    <Compile Include="Interfaces\IGameServiceProvider.cs" />
+    <Compile Include="Interfaces\IMapServiceProvider.cs" />
+    <Compile Include="Interfaces\IServiceProvider.cs" />
+    <Compile Include="Internal\CRelayCommand.cs" />
+    <Compile Include="Internal\EMoveDirections.cs" />
+    <Compile Include="Models\Heroes\CHeroBase.cs" />
+    <Compile Include="Models\Items\Weapon.cs" />
+    <Compile Include="NavigationPage.xaml.cs">
+      <DependentUpon>NavigationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\EPageType.cs" />
+    <Compile Include="Navigation\Game\GameNavigator.cs" />
+    <Compile Include="Navigation\NavigateEventArgs.cs" />
+    <Compile Include="Navigation\NavigationHistoryItem.cs" />
+    <Compile Include="Navigation\Navigator.cs" />
+    <Compile Include="Navigation\PagesFactory.cs" />
+    <Compile Include="Navigation\PagesStore.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Resources\Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\CGameChoiceServiceCallback.cs" />
+    <Compile Include="Services\GameChoiceProvider.cs" />
+    <Compile Include="Services\MapServiceProvider.cs" />
+    <Compile Include="Services\СGameServiceCallback.cs" />
+    <Compile Include="ViewModels\Authorization\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\BattlefieldViewModel.cs" />
+    <Compile Include="ViewModels\BattleViewModel.cs" />
+    <Compile Include="ViewModels\CellViewModel.cs" />
+    <Compile Include="ViewModels\GameProgressBarViewModel.cs" />
+    <Compile Include="ViewModels\GameViewModel.cs" />
+    <Compile Include="ViewModels\HeroSelectionViewModel.cs" />
+    <Compile Include="ViewModels\TradingViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\Authorization\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\CGameServiceProvider.cs" />
+    <Compile Include="Views\GameArea.xaml.cs">
+      <DependentUpon>GameArea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GameChoice\CreateGamePage.xaml.cs">
+      <DependentUpon>CreateGamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\GameChoice\CreateGamePageViewModel.cs" />
+    <Compile Include="Views\GameChoice\GamePlayersListPage.xaml.cs">
+      <DependentUpon>GamePlayersListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\GameChoice\GamePlayersListPageViewModel.cs" />
+    <Compile Include="Views\GameChoice\SelectGamePage.xaml.cs">
+      <DependentUpon>SelectGamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\GameChoice\SelectGamePageViewModel.cs" />
+    <Compile Include="Views\GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HeroSelectionView.xaml.cs">
+      <DependentUpon>HeroSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HeroStatus.xaml.cs">
+      <DependentUpon>HeroStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HeroView.xaml.cs">
+      <DependentUpon>HeroView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryItemView.xaml.cs">
+      <DependentUpon>InventoryItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapView.xaml.cs">
+      <DependentUpon>MapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayArea\BattleView.xaml.cs">
+      <DependentUpon>BattleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayArea\EndRoundControl.xaml.cs">
+      <DependentUpon>EndRoundControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayArea\TradingPage.xaml.cs">
+      <DependentUpon>TradingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UnitView.xaml.cs">
+      <DependentUpon>UnitView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\CellControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\GameProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="NavigationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Authorization\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameArea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameChoice\CreateGamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameChoice\GamePlayersListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameChoice\SelectGamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HeroSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HeroStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HeroView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MapView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayArea\BattleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayArea\EndRoundControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayArea\TradingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UnitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\GameServer\CGameChoiceService.wsdl" />
+    <None Include="Connected Services\GameServer\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GameServer\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GameServer\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GameServer\UI.GameServer.LogInResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GameServer\UI.GameServer.TryConnectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="items.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Core.CGame.datasource" />
+    <None Include="Properties\DataSources\Core.Data.CGameInfo.datasource" />
+    <None Include="Properties\DataSources\Core.Data.CMapInfo.datasource" />
+    <None Include="Properties\DataSources\Core.Data.CPlayer.datasource" />
+    <None Include="Properties\DataSources\GameServerWCF.CPlayer.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer.Client\BusinessLayer.Client.csproj">
+      <Project>{67667C87-6AC8-4782-9720-9847EB754FD7}</Project>
+      <Name>BusinessLayer.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{3A42933C-5A3F-429F-9304-D31F0778DB37}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameServer.Contracts\GameServer.Contracts.csproj">
+      <Project>{81176277-7807-486D-A58D-21BFF264B3EA}</Project>
+      <Name>GameServer.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{FB9427E4-27AC-4C39-A15D-F16640BC3742}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoginService.Contracts\LoginService.Contracts.csproj">
+      <Project>{80030C55-F612-448F-ADB8-F8FF867A64CB}</Project>
+      <Name>LoginService.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Mage.png" />
+    <Resource Include="Images\Paladin.png" />
+    <Resource Include="Images\Thief.png" />
+    <Resource Include="Images\Warrior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gui\HeaderTexture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gui\Time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Items\armlet0.png" />
+    <Resource Include="Images\Items\armlet1.png" />
+    <Resource Include="Images\Items\armlet10.png" />
+    <Resource Include="Images\Items\armlet11.png" />
+    <Resource Include="Images\Items\armlet12.png" />
+    <Resource Include="Images\Items\armlet2.png" />
+    <Resource Include="Images\Items\armlet3.png" />
+    <Resource Include="Images\Items\armlet4.png" />
+    <Resource Include="Images\Items\armlet5.png" />
+    <Resource Include="Images\Items\armlet6.png" />
+    <Resource Include="Images\Items\armlet7.png" />
+    <Resource Include="Images\Items\armlet8.png" />
+    <Resource Include="Images\Items\armlet9.png" />
+    <Resource Include="Images\Items\armor0.png" />
+    <Resource Include="Images\Items\armor1.png" />
+    <Resource Include="Images\Items\armor10.png" />
+    <Resource Include="Images\Items\armor2.png" />
+    <Resource Include="Images\Items\armor3.png" />
+    <Resource Include="Images\Items\armor4.png" />
+    <Resource Include="Images\Items\armor5.png" />
+    <Resource Include="Images\Items\armor6.png" />
+    <Resource Include="Images\Items\armor7.png" />
+    <Resource Include="Images\Items\armor8.png" />
+    <Resource Include="Images\Items\armor9.png" />
+    <Resource Include="Images\Items\bag0.png" />
+    <Resource Include="Images\Items\bag1.png" />
+    <Resource Include="Images\Items\bag2.png" />
+    <Resource Include="Images\Items\bag3.png" />
+    <Resource Include="Images\Items\bag4.png" />
+    <Resource Include="Images\Items\boot0.png" />
+    <Resource Include="Images\Items\boot1.png" />
+    <Resource Include="Images\Items\boot10.png" />
+    <Resource Include="Images\Items\boot11.png" />
+    <Resource Include="Images\Items\boot12.png" />
+    <Resource Include="Images\Items\boot2.png" />
+    <Resource Include="Images\Items\boot3.png" />
+    <Resource Include="Images\Items\boot4.png" />
+    <Resource Include="Images\Items\boot5.png" />
+    <Resource Include="Images\Items\boot6.png" />
+    <Resource Include="Images\Items\boot7.png" />
+    <Resource Include="Images\Items\boot8.png" />
+    <Resource Include="Images\Items\boot9.png" />
+    <Resource Include="Images\Items\bow0.png" />
+    <Resource Include="Images\Items\bow1.png" />
+    <Resource Include="Images\Items\bow10.png" />
+    <Resource Include="Images\Items\bow11.png" />
+    <Resource Include="Images\Items\bow12.png" />
+    <Resource Include="Images\Items\bow13.png" />
+    <Resource Include="Images\Items\bow14.png" />
+    <Resource Include="Images\Items\bow15.png" />
+    <Resource Include="Images\Items\bow16.png" />
+    <Resource Include="Images\Items\bow2.png" />
+    <Resource Include="Images\Items\bow3.png" />
+    <Resource Include="Images\Items\bow4.png" />
+    <Resource Include="Images\Items\bow5.png" />
+    <Resource Include="Images\Items\bow6.png" />
+    <Resource Include="Images\Items\bow7.png" />
+    <Resource Include="Images\Items\bow8.png" />
+    <Resource Include="Images\Items\bow9.png" />
+    <Resource Include="Images\Items\glove0.png" />
+    <Resource Include="Images\Items\glove1.png" />
+    <Resource Include="Images\Items\glove10.png" />
+    <Resource Include="Images\Items\glove11.png" />
+    <Resource Include="Images\Items\glove12.png" />
+    <Resource Include="Images\Items\glove2.png" />
+    <Resource Include="Images\Items\glove3.png" />
+    <Resource Include="Images\Items\glove4.png" />
+    <Resource Include="Images\Items\glove5.png" />
+    <Resource Include="Images\Items\glove6.png" />
+    <Resource Include="Images\Items\glove7.png" />
+    <Resource Include="Images\Items\glove8.png" />
+    <Resource Include="Images\Items\glove9.png" />
+    <Resource Include="Images\Items\0A4CFFC6-FC9C-4CEC-BBDF-EC3D16B0939A.png" />
+    <Resource Include="Images\Items\hammer1.png" />
+    <Resource Include="Images\Items\hammer10.png" />
+    <Resource Include="Images\Items\hammer11.png" />
+    <Resource Include="Images\Items\hammer12.png" />
+    <Resource Include="Images\Items\hammer13.png" />
+    <Resource Include="Images\Items\hammer14.png" />
+    <Resource Include="Images\Items\hammer15.png" />
+    <Resource Include="Images\Items\hammer16.png" />
+    <Resource Include="Images\Items\hammer2.png" />
+    <Resource Include="Images\Items\hammer3.png" />
+    <Resource Include="Images\Items\hammer4.png" />
+    <Resource Include="Images\Items\hammer5.png" />
+    <Resource Include="Images\Items\hammer6.png" />
+    <Resource Include="Images\Items\hammer7.png" />
+    <Resource Include="Images\Items\hammer8.png" />
+    <Resource Include="Images\Items\hammer9.png" />
+    <Resource Include="Images\Items\DC1430DA-39F0-41BF-AA50-F185ACF951A6.png" />
+    <Resource Include="Images\Items\staff1.png" />
+    <Resource Include="Images\Items\staff10.png" />
+    <Resource Include="Images\Items\staff11.png" />
+    <Resource Include="Images\Items\staff12.png" />
+    <Resource Include="Images\Items\staff13.png" />
+    <Resource Include="Images\Items\staff14.png" />
+    <Resource Include="Images\Items\staff15.png" />
+    <Resource Include="Images\Items\staff16.png" />
+    <Resource Include="Images\Items\staff2.png" />
+    <Resource Include="Images\Items\staff3.png" />
+    <Resource Include="Images\Items\staff4.png" />
+    <Resource Include="Images\Items\staff5.png" />
+    <Resource Include="Images\Items\staff6.png" />
+    <Resource Include="Images\Items\staff7.png" />
+    <Resource Include="Images\Items\staff8.png" />
+    <Resource Include="Images\Items\staff9.png" />
+    <Resource Include="Images\Items\sword0.png" />
+    <Resource Include="Images\Items\sword1.png" />
+    <Resource Include="Images\Items\sword10.png" />
+    <Resource Include="Images\Items\sword11.png" />
+    <Resource Include="Images\Items\sword12.png" />
+    <Resource Include="Images\Items\sword13.png" />
+    <Resource Include="Images\Items\sword14.png" />
+    <Resource Include="Images\Items\sword15.png" />
+    <Resource Include="Images\Items\sword16.png" />
+    <Resource Include="Images\Items\sword2.png" />
+    <Resource Include="Images\Items\sword3.png" />
+    <Resource Include="Images\Items\sword4.png" />
+    <Resource Include="Images\Items\sword5.png" />
+    <Resource Include="Images\Items\sword6.png" />
+    <Resource Include="Images\Items\sword7.png" />
+    <Resource Include="Images\Items\sword8.png" />
+    <Resource Include="Images\Items\sword9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\GameServer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GameServer\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GameServer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GameServer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GameServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gui\main_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gui\gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gui\trader_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gui\arrow_down.png" />
+    <Resource Include="Images\Gui\arrow_left.png" />
+    <Resource Include="Images\Gui\arrow_right.png" />
+    <Resource Include="Images\Gui\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\monster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Gui\dirt.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Core.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Core.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1300/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CPlayer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Session" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CPlayer" nillable="true" type="tns:CPlayer" />
+  <xs:complexType name="ArrayOfCGameInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CGameInfo" nillable="true" type="tns:CGameInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCGameInfo" nillable="true" type="tns:ArrayOfCGameInfo" />
+  <xs:complexType name="CGameInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPlayersCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Map" nillable="true" type="tns:CMapInfo" />
+      <xs:element minOccurs="0" name="MaxPlayers" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Players" nillable="true" type="tns:ArrayOfCPlayer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CGameInfo" nillable="true" type="tns:CGameInfo" />
+  <xs:complexType name="CMapInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Height" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CMapInfo" nillable="true" type="tns:CMapInfo" />
+  <xs:complexType name="ArrayOfCPlayer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CPlayer" nillable="true" type="tns:CPlayer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCPlayer" nillable="true" type="tns:ArrayOfCPlayer" />
+  <xs:complexType name="ArrayOfCMapInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CMapInfo" nillable="true" type="tns:CMapInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCMapInfo" nillable="true" type="tns:ArrayOfCMapInfo" />
+</xs:schema>

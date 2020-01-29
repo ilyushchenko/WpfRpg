@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="UI.Views.HeroView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UI.Views"
+             xmlns:Units="clr-namespace:UI.Models.Heroes"
+             xmlns:heroes="clr-namespace:Core.Models.Heroes;assembly=Core"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="80">
+    
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type heroes:CMage }">
+            <Viewbox>
+                <Image Source="../Images/Mage.png" />
+            </Viewbox>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <ContentControl Content="{Binding Mode=OneWay}" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,102 @@
+﻿<Page x:Class="UI.Views.GameChoice.CreateGamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:UI.Views.GameChoice"
+      xmlns:controls="clr-namespace:UI.Controls"
+      xmlns:vm="clr-namespace:UI.ViewModels.GameChoice"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateGamePage"
+      d:DataContext="{d:DesignInstance vm:CreateGamePageViewModel}">
+    <StackPanel>
+
+        <StackPanel>
+
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"
+                           Text="Game name: " />
+                <TextBox Grid.Column="1"
+                         HorizontalAlignment="Stretch"
+                         Height="30"
+                         Text="{Binding Name}" />
+            </Grid>
+
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"
+                           Text="Max players: " />
+                <TextBox Grid.Column="1"
+                         HorizontalAlignment="Stretch"
+                         Height="30"
+                         Text="{Binding MaxPlayers}" />
+            </Grid>
+
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"
+                           Text="Map: " />
+                <ComboBox Grid.Column="1"
+                          Height="30"
+                          ItemsSource="{Binding Maps}"
+                          SelectedItem="{Binding SelectedMap}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="5">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                                    <TextBlock Margin="10,0,0,0" Text="{Binding Width}" />
+                                    <TextBlock Text="x" />
+                                    <TextBlock Text="{Binding Height}" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </Grid>
+
+        </StackPanel>
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="BackButton"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    Content="Back" Width="100" Height="50"
+                    Margin="20" Click="BackButton_Click" />
+
+            <Button Grid.Column="1"
+                    x:Name="CreateGameButton"
+                    HorizontalAlignment="Right"
+                    Margin="20"
+                    Content="Create" Width="100" Height="50"
+                    Command="{Binding CreateGameCommand}" />
+        </Grid>
+
+    </StackPanel>
+</Page>

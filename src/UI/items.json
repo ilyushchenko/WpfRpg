@@ -1,0 +1,635 @@
+{
+  "hammer": [
+    {
+      "Name": "T1 Splintered Club",
+      "Image": "hammer0.png",
+      "Description": "It's already half broken and you are still using it?"
+    },
+    {
+      "Name": "T2 Wooden Mallet",
+      "Image": "hammer1.png",
+      "Description": "This should be hammering nails, not skulls."
+    },
+    {
+      "Name": "T3 Primal Mace",
+      "Image": "hammer2.png",
+      "Description": "Rusty old hammer, on the verge of breaking."
+    },
+    {
+      "Name": "T4 Orcish Bludgeon",
+      "Image": "hammer3.png",
+      "Description": "An ancient weapon stolen from marauding orcs residing in hidden lairs."
+    },
+    {
+      "Name": "T5 Heavy Mace",
+      "Image": "hammer4.png",
+      "Description": "Large weapon used long ago to destroy skulls."
+    },
+    {
+      "Name": "T6 Iron Basher",
+      "Image": "hammer5.png",
+      "Description": "Strange rod-like basher. Seems crude and emits a faint smell of druid oils..."
+    },
+    {
+      "Name": "T7 Darkmetal Maul",
+      "Image": "hammer6.png",
+      "Description": "Ancient dwarves forged this mighty structure. Dark and deadly."
+    },
+    {
+      "Name": "T8 Divine Gavel",
+      "Image": "hammer7.png",
+      "Description": "It is said that the eyes of the gods follow the wielder, bringing fortune to the valiant and doom to the cowardly."
+    },
+    {
+      "Name": "T9 Hallowed Hammer",
+      "Image": "hammer8.png",
+      "Description": "Holy tool used by druids to make sacrifices to the ancient nature gods."
+    },
+    {
+      "Name": "T10 Dwarven Maul",
+      "Image": "hammer9.png",
+      "Description": "Heavy basher used by dwarven warriors. Made of an unknown metal, dark and heavy."
+    },
+    {
+      "Name": "T11 Coldforged Gavel",
+      "Image": "hammer10.png",
+      "Description": "A mighty hammer forged without heat killing anything it can without mercy."
+    },
+    {
+      "Name": "T12 Amboss",
+      "Image": "hammer11.png",
+      "Description": "Topped with the skull of a slain beast, this weapon inspires terror in all who stand against it."
+    },
+    {
+      "Name": "T13 Skullshatterer",
+      "Image": "hammer12.png",
+      "Description": "Can penetrate your feeble skull quite easily. Or your foes. Probably yours though."
+    },
+    {
+      "Name": "T14 Benevolence",
+      "Image": "hammer13.png",
+      "Description": "Nothing kind about this cruel weapon."
+    },
+    {
+      "Name": "T15 Hammer of Gaia",
+      "Image": "hammer14.png",
+      "Description": "Deadly and uncontrollable, this celestial hammer etches terror in its purest form into those unfortunate ones who have caught sight of it."
+    },
+    {
+      "Name": "T16 Worldender",
+      "Image": "hammer15.png",
+      "Description": "Does it have the power to end worlds? Few can say. If it does, we will not live long enough to learn of it."
+    },
+    {
+      "Name": "T17 Nightmare",
+      "Image": "hammer16.png",
+      "Description": "A mysterious magician soaked many intricate charms into this weapon, bringing ghastly thoughts and dreams to its wielder."
+    }
+  ],
+  "bow": [
+    {
+      "Name": "T1 Driftwood Shortbow",
+      "Image": "bow0.png",
+      "Description": "Almost lightweight. You can probably find something better around."
+    },
+    {
+      "Name": "T2 Novice Shortbow",
+      "Image": "bow1.png",
+      "Description": "You feel less skilled just by holding this in your hands."
+    },
+    {
+      "Name": "T3 Curved Shortbow",
+      "Image": "bow2.png",
+      "Description": "This bow is curved to such an extent that it will probably snap at any moment."
+    },
+    {
+      "Name": "T4 Adventurer's Shortbow",
+      "Image": "bow3.png",
+      "Description": "Whoever left this on the ground probably didn't meet a nice end."
+    },
+    {
+      "Name": "T5 Long Bow",
+      "Image": "bow4.png",
+      "Description": "A more advanced weapon. Quite nice to look at."
+    },
+    {
+      "Name": "T6 Bone Bow",
+      "Image": "bow5.png",
+      "Description": "Put together with the bones of... somebody?"
+    },
+    {
+      "Name": "T7 Elven Bow",
+      "Image": "bow6.png",
+      "Description": "An expert bow of an elegant race."
+    },
+    {
+      "Name": "T8 Ancient Bow",
+      "Image": "bow7.png",
+      "Description": "Crude, but effective. Draws its power from the tiny leaf attached to it."
+    },
+    {
+      "Name": "T9 Iron Piercer",
+      "Image": "bow8.png",
+      "Description": "Burns away the enemy with the spiciest of red coloring."
+    },
+    {
+      "Name": "T10 Silver Recurve",
+      "Image": "bow9.png",
+      "Description": "A bow commonly used by low ranked royal archers. Blends in well with vegetation."
+    },
+    {
+      "Name": "T11 Assassin's Bow",
+      "Image": "bow10.png",
+      "Description": "Masterfully crafted by the bandits of the capitals."
+    },
+    {
+      "Name": "T12 Skyfire Warbow",
+      "Image": "bow11.png",
+      "Description": "A rare bow used in the greatest of wars. Shooting it makes you feel like the heavens will collapse."
+    },
+    {
+      "Name": "T13 Hellfire Warbow",
+      "Image": "bow12.png",
+      "Description": "What is it? Is it ice? The world may never know..."
+    },
+    {
+      "Name": "T14 Widowmaker",
+      "Image": "bow13.png",
+      "Description": "Kills as beautifully as it looks."
+    },
+    {
+      "Name": "T15 Stormsong",
+      "Image": "bow14.png",
+      "Description": "Surrounded by a ghastly aura. The wind blows in the direction you aim it."
+    },
+    {
+      "Name": "T16 Scarebow",
+      "Image": "bow15.png",
+      "Description": "So scary that few have the guts to hold it."
+    },
+    {
+      "Name": "T17 Fury",
+      "Image": "bow16.png",
+      "Description": "Embedded with a primal rage, your foes tremble at the sight of this weapon. Pew pew is the last thing they will ever hear."
+    }
+  ],
+  "staff": [
+    {
+      "Name": "T1 Broken Twig",
+      "Image": "staff0.png",
+      "Description": "Weapon forged by the greatest blacksmith of all the land. At least that's what we told little Timmy."
+    },
+    {
+      "Name": "T2 Cracked Stick",
+      "Image": "staff1.png",
+      "Description": "Desperate situations call for desperate measures."
+    },
+    {
+      "Name": "T3 Gnarled Broomstick",
+      "Image": "staff2.png",
+      "Description": "Scruffy broomstick stolen from a mage. Gnarled and bony."
+    },
+    {
+      "Name": "T4 Oak Stave",
+      "Image": "staff3.png",
+      "Description": "A wand cut from the branches of an ancient oak. Infused with deep power."
+    },
+    {
+      "Name": "T5 Mystic Wand",
+      "Image": "staff4.png",
+      "Description": "Mystical weapon glowing with a mysterious essence."
+    },
+    {
+      "Name": "T6 Bone Stave",
+      "Image": "staff5.png",
+      "Description": "Nothing fancy about this weapon, just the femur of a lich."
+    },
+    {
+      "Name": "T7 Encrusted Rod",
+      "Image": "staff6.png",
+      "Description": "Long rod with a shimmering blue gem on its crown."
+    },
+    {
+      "Name": "T8 Imbued Staff",
+      "Image": "staff7.png",
+      "Description": "Dark purple staff. Quite mysterious in its making, yet nice to look at."
+    },
+    {
+      "Name": "T9 Emerald Staff",
+      "Image": "staff8.png",
+      "Description": "Constructed from emeralds stolen from the mountain dwarves."
+    },
+    {
+      "Name": "T10 Sapphire Staff",
+      "Image": "staff9.png",
+      "Description": "Strange... the staff seems... triangular..."
+    },
+    {
+      "Name": "T11 Frozen Greatstaff",
+      "Image": "staff10.png",
+      "Description": "Eccentric rod with a pale blue stone embedded inside..."
+    },
+    {
+      "Name": "T12 Infernal Staff",
+      "Image": "staff11.png",
+      "Description": "Constructed by unknown blacksmiths residing in fabled valleys."
+    },
+    {
+      "Name": "T13 Hellfire Greatstaff",
+      "Image": "staff12.png",
+      "Description": "Its beauty calls out to you... to kill... to conquer..."
+    },
+    {
+      "Name": "T14 Divine Staff",
+      "Image": "staff13.png",
+      "Description": "A staff stolen from the angels. They're still hunting for it."
+    },
+    {
+      "Name": "T15 Crystal Core",
+      "Image": "staff14.png",
+      "Description": "Crude in its looks, yet mighty at its heart..."
+    },
+    {
+      "Name": "T16 Witch's Heart",
+      "Image": "staff15.png",
+      "Description": "We are told it's core is from the heart of a witch. No one has found the corpse. Or the staff itself."
+    },
+    {
+      "Name": "T17 Deathweaver",
+      "Image": "staff16.png",
+      "Description": "This weapon is so secretive that the few who wield it have killed all that know of it."
+    }
+  ],
+  "sword": [
+    {
+      "Name": "T1 Wooden Sword",
+      "Image": "sword0.png",
+      "Description": "Name says it all. Careful of the splinters."
+    },
+    {
+      "Name": "T2 Rusty Ironsword",
+      "Image": "sword1.png",
+      "Description": "Not much better than a blunt piece of wood in my opinion."
+    },
+    {
+      "Name": "T3 Troll Blade",
+      "Image": "sword2.png",
+      "Description": "Am I being pranked?"
+    },
+    {
+      "Name": "T4 Broadsword",
+      "Image": "sword3.png",
+      "Description": "Some knight dropped this. Probably unintentionally."
+    },
+    {
+      "Name": "T5 Longsword",
+      "Image": "sword4.png",
+      "Description": "Long? Yes. Deadly? Maybe. Just don't cut yourself."
+    },
+    {
+      "Name": "T6 Gladius",
+      "Image": "sword5.png",
+      "Description": "Crudely carved from the bones of an ancient behemoth."
+    },
+    {
+      "Name": "T7 Greatsword",
+      "Image": "sword6.png",
+      "Description": "A sword so mighty that few can handle it. It's pretty heavy."
+    },
+    {
+      "Name": "T8 Nullfire Sword",
+      "Image": "sword7.png",
+      "Description": "Diabolical curved blade. Even holding it makes you feel its dark essence."
+    },
+    {
+      "Name": "T9 Ghastly Scimitar",
+      "Image": "sword8.png",
+      "Description": "A cold-looking blade with a burning hot edge."
+    },
+    {
+      "Name": "T10 Knight's Greatsword",
+      "Image": "sword9.png",
+      "Description": "Cylindrical sword stolen from an ancient king. Cutting capability is questionable."
+    },
+    {
+      "Name": "T11 King's Rapier",
+      "Image": "sword10.png",
+      "Description": "A blade wielded by only the most skillful knights."
+    },
+    {
+      "Name": "T12 Void Blade",
+      "Image": "sword11.png",
+      "Description": "Powerful masterpiece brought from the abysses of the underworld."
+    },
+    {
+      "Name": "T13 Zerstörer",
+      "Image": "sword12.png",
+      "Description": "Mysterious pink sword. Engravings say \"Mächtig Zerstörer\"."
+    },
+    {
+      "Name": "T14 Hearteater",
+      "Image": "sword13.png",
+      "Description": "Devours living tissue as it plunges its way into the thick muscle of your foes beating heart."
+    },
+    {
+      "Name": "T15 Demonedge",
+      "Image": "sword14.png",
+      "Description": "A blade said to be broken in the past and forged anew by the fabled demons of these magnificent lands."
+    },
+    {
+      "Name": "T16 Excalibur",
+      "Image": "sword15.png",
+      "Description": "We were told it was pulled from stone. Still can't find the stone."
+    },
+    {
+      "Name": "T17 Harbinger",
+      "Image": "sword16.png",
+      "Description": "This weapon brings about the coming of a new age."
+    }
+  ],
+  "armlet": [
+    {
+      "Name": "T1 Simple Wristbands",
+      "Image": "armlet0.png",
+      "Description": "Cheap leather bands bought by an ambitious farmer."
+    },
+    {
+      "Name": "T2 Makeshift Armbands",
+      "Image": "armlet1.png",
+      "Description": "Skilled hands made an intricate job at making these homemade cuffs."
+    },
+    {
+      "Name": "T3 Leather Armlets",
+      "Image": "armlet2.png",
+      "Description": "Stiff, make your arms sore."
+    },
+    {
+      "Name": "T4 Bone Bracelets",
+      "Image": "armlet3.png",
+      "Description": "Elegant cuffs made from the tusks of the last mammoth."
+    },
+    {
+      "Name": "T5 Iron Vambraces",
+      "Image": "armlet4.png",
+      "Description": "Heavy on your arms... worth the protection."
+    },
+    {
+      "Name": "T6 Imbued Bracers",
+      "Image": "armlet5.png",
+      "Description": "Dull metal bracer, handy for night time raiding."
+    },
+    {
+      "Name": "T7 Ember Cuffs",
+      "Image": "armlet6.png",
+      "Description": "Press Shift to compare item."
+    },
+    {
+      "Name": "T8 Mirror Armlets",
+      "Image": "armlet7.png",
+      "Description": "Blind your foes with a magical shine off a devious magicians mirror..."
+    },
+    {
+      "Name": "T9 Golem Fragments",
+      "Image": "armlet8.png",
+      "Description": "The ancient golems left remnants of their passing, which you unscrupulously have decided to wear on your arm."
+    },
+    {
+      "Name": "T10 Coldforged Bracers",
+      "Image": "armlet9.png",
+      "Description": "The deceptively light steel offers chilling protection against sneaky blows."
+    },
+    {
+      "Name": "T11 Blackstars",
+      "Image": "armlet10.png",
+      "Description": "Stars are not often black, yet this fragment has a... deep... deep darkness."
+    },
+    {
+      "Name": "T12 Mobiuses",
+      "Image": "armlet11.png",
+      "Description": "Reforged, lost, found, stolen, hidden for eras without end."
+    },
+    {
+      "Name": "T13 Guardians",
+      "Image": "armlet12.png",
+      "Description": "This item was forged on a full moon when mysterious incantations were heard in the whispers of the dark. Some say that it was Anubis himself speaking with the dead."
+    }
+  ],
+  "armor": [
+    {
+      "Name": "T1 Potato Sack",
+      "Image": "armor0.png",
+      "Description": "Sack stiff with starch, making you feel dirty and disheveled."
+    },
+    {
+      "Name": "T2 Faded Garment",
+      "Image": "armor1.png",
+      "Description": "Press Shift to compare item."
+    },
+    {
+      "Name": "T3 Adventurer's Tunic",
+      "Image": "armor2.png",
+      "Description": "Knobbly soft iron tunic, passed on from many generations of adventurers passing over these lands."
+    },
+    {
+      "Name": "T4 Leather Jerkin",
+      "Image": "armor3.png",
+      "Description": "This fabric isn't much, but it might stop an arrow or two."
+    },
+    {
+      "Name": "T5 Scaled Chestguard",
+      "Image": "armor4.png",
+      "Description": "Hard suit made from scales taken from a mighty dragon that once roamed these lands."
+    },
+    {
+      "Name": "T6 Sky Mail",
+      "Image": "armor5.png",
+      "Description": "Rumours say it's made from clouds..."
+    },
+    {
+      "Name": "T7 Shadow Cloak",
+      "Image": "armor6.png",
+      "Description": "The wearer blends in nicely with the shadows... or so the thieves think."
+    },
+    {
+      "Name": "T8 Runic Halfplate",
+      "Image": "armor7.png",
+      "Description": "Forged by unknown magicians, you wear a dark and powerful chestplate."
+    },
+    {
+      "Name": "T9 Hellfire Fullplate",
+      "Image": "armor8.png",
+      "Description": "Forged in unknown valleys, it provides protection for your weak, fleshy body."
+    },
+    {
+      "Name": "T10 Soulkeeper",
+      "Image": "armor9.png",
+      "Description": "Press Shift to compare item."
+    },
+    {
+      "Name": "T11 Deathless",
+      "Image": "armor10.png",
+      "Description": "Rumours say that the wearer is immortal. Unfortunately this armour can only be found on corpses of the slain."
+    }
+  ],
+  "boot": [
+    {
+      "Name": "T1 Sandals",
+      "Image": "boot0.png",
+      "Description": "At least you're wearing something on those feet."
+    },
+    {
+      "Name": "T2 Cloth Footpads",
+      "Image": "boot1.png",
+      "Description": "Soles made from cloth, will probably tear after a few hours."
+    },
+    {
+      "Name": "T3 Leather Shoes",
+      "Image": "boot2.png",
+      "Description": "The soft leather is said to be stripped off wild boars roaming the eerie woods."
+    },
+    {
+      "Name": "T4 Bone Brogans",
+      "Image": "boot3.png",
+      "Description": "Clearly lacking in imagination, the maker made boots from the bones of a very large creature..."
+    },
+    {
+      "Name": "T5 Scaled Treads",
+      "Image": "boot4.png",
+      "Description": "Mysterious scales cover the outside of your footwear, catching glares in the sun."
+    },
+    {
+      "Name": "T6 Shadow Shoes",
+      "Image": "boot5.png",
+      "Description": "A pleasant pattern made to paralyze your foes... wonder if it works."
+    },
+    {
+      "Name": "T7 Wartorn Boots",
+      "Image": "boot6.png",
+      "Description": "Taken from war veterans who clearly didn't find enough protection from these greaves."
+    },
+    {
+      "Name": "T8 Imbued Treads",
+      "Image": "boot7.png",
+      "Description": "Chunky in its looks, probably very uncomfortable."
+    },
+    {
+      "Name": "T9 Skyswift Boots",
+      "Image": "boot8.png",
+      "Description": "Run as quick as the wind... or close to it."
+    },
+    {
+      "Name": "T10 Coldforged Greaves",
+      "Image": "boot9.png",
+      "Description": "Icy cold boots forged without heat which allow you to run without stumbling."
+    },
+    {
+      "Name": "T11 Cloudrunners",
+      "Image": "boot10.png",
+      "Description": "Some say you can run on clouds with these. The few that have tried have already ascended."
+    },
+    {
+      "Name": "T12 Talaria",
+      "Image": "boot11.png",
+      "Description": "Ancient boots rumoured to be stolen from the feet of a messenger god."
+    },
+    {
+      "Name": "T13 Starshards",
+      "Image": "boot12.png",
+      "Description": "Stars were always considered to be almighty, now they're yours."
+    }
+  ],
+  "glove": [
+    {
+      "Name": "T1 Hand Wraps",
+      "Image": "glove0.png",
+      "Description": "Straps of leather covering your feeble hands. Pulling the bowstring is much easier for you now."
+    },
+    {
+      "Name": "T2 Cloth Mitts",
+      "Image": "glove1.png",
+      "Description": "Spun yarn from stolen sheep makes these warm gloves a pleasure to wear."
+    },
+    {
+      "Name": "T3 Leather Gloves",
+      "Image": "glove2.png",
+      "Description": "Your fingers can barely move in these stiff leather mitts."
+    },
+    {
+      "Name": "T4 Bone Grips",
+      "Image": "glove3.png",
+      "Description": "Clicking sounds travel with you as you wear these."
+    },
+    {
+      "Name": "T5 Iron Gauntlets",
+      "Image": "glove4.png",
+      "Description": "Soft-iron gloves provide a little more protection, although your hands are cold now."
+    },
+    {
+      "Name": "T6 Imbued Battlefists",
+      "Image": "glove5.png",
+      "Description": "Mitts made out of unknown material... it shines..."
+    },
+    {
+      "Name": "T7 Wartorn Mitts",
+      "Image": "glove6.png",
+      "Description": "Some war general must have dropped these...probably unintentionally too."
+    },
+    {
+      "Name": "T8 Fiery Handguards",
+      "Image": "glove7.png",
+      "Description": "Fire is no match for your hands as you wear these emerald mitts."
+    },
+    {
+      "Name": "T9 Empowerment Gloves",
+      "Image": "glove8.png",
+      "Description": "Give a false sense of power."
+    },
+    {
+      "Name": "T10 Coldforged Fists",
+      "Image": "glove9.png",
+      "Description": "Forged without heat, worn without fear."
+    },
+    {
+      "Name": "T11 Eternals",
+      "Image": "glove10.png",
+      "Description": "Gloves sought by warriors for eras on end...at last...it is found."
+    },
+    {
+      "Name": "T12 Phrygians",
+      "Image": "glove11.png",
+      "Description": "Rumours say that a touch from these gloves turns your foes into gold...your hand is strangely heavy..."
+    },
+    {
+      "Name": "T13 Titans",
+      "Image": "glove12.png",
+      "Description": "Gloves so powerful in their nature that the very air shimmers as you wave your hand."
+    }
+  ],
+  "bag": [
+    {
+      "Name": "T1 Linen Pouch",
+      "Image": "bag0.png",
+      "Description": "Small little purse used by merchant's wives."
+    },
+    {
+      "Name": "T2 Adventurer's Rucksack",
+      "Image": "bag1.png",
+      "Description": "The buckle is worth more than the rest of it."
+    },
+    {
+      "Name": "T3 Purpur Duffel",
+      "Image": "bag2.png",
+      "Description": "Nice purple rucksack for all your traveling needs."
+    },
+    {
+      "Name": "T4 Elven Saddlebag",
+      "Image": "bag3.png",
+      "Description": "Elegant bag used by elven archers on horseback."
+    },
+    {
+      "Name": "T5 Moss Enigma",
+      "Image": "bag4.png",
+      "Description": "Woven from threads of lichen, the construction of this bag remains a mystery."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="UI.Views.MapView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UI.Views"
+             xmlns:vm="clr-namespace:UI.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400">
+    <Grid>
+        <ItemsControl ItemsSource="{Binding Cells}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="{Binding Columns}" Rows="{Binding Rows}" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="{Binding Background}"  Width="{Binding Size}" Height="{Binding Size}">
+
+                        <Grid.InputBindings>
+                            <MouseBinding Command="{Binding MakeSelected}" Gesture="LeftClick" />
+                            <MouseBinding Command="{Binding MakeTurn}" Gesture="RightClick " />
+                        </Grid.InputBindings>
+
+                        <Border BorderThickness="2" BorderBrush="Black" CornerRadius="0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualWidth}"
+                Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                            <TextBlock Text="{Binding Cell}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                        <local:HeroView DataContext="{Binding Hero}" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

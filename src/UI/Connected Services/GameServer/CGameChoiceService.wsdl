@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CGameChoiceService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IGameChoiceService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IMapService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1300/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1300/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1300/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Core.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGameChoiceService_LogIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogIn" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_LogIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_GetGames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGames" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_GetGames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_CreateGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_CreateGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_TryConnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:TryConnect" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_TryConnect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TryConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_Ready_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ready" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_Disconnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Disconnect" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_PlayerHasConnected_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerHasConnected" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_PlayerHasDisconnected_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerHasDisconnected" />
+  </wsdl:message>
+  <wsdl:message name="IGameChoiceService_GameHasStarted_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GameHasStarted" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_GetMaps_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaps" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_GetMaps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMapsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGameChoiceService">
+    <wsdl:operation name="LogIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameChoiceService/LogIn" message="tns:IGameChoiceService_LogIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameChoiceService/LogInResponse" message="tns:IGameChoiceService_LogIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameChoiceService/GetGames" message="tns:IGameChoiceService_GetGames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameChoiceService/GetGamesResponse" message="tns:IGameChoiceService_GetGames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameChoiceService/CreateGame" message="tns:IGameChoiceService_CreateGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameChoiceService/CreateGameResponse" message="tns:IGameChoiceService_CreateGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TryConnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameChoiceService/TryConnect" message="tns:IGameChoiceService_TryConnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameChoiceService/TryConnectResponse" message="tns:IGameChoiceService_TryConnect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ready">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameChoiceService/Ready" message="tns:IGameChoiceService_Ready_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameChoiceService/Disconnect" message="tns:IGameChoiceService_Disconnect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerHasConnected">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameChoiceService/PlayerHasConnected" message="tns:IGameChoiceService_PlayerHasConnected_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerHasDisconnected">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameChoiceService/PlayerHasDisconnected" message="tns:IGameChoiceService_PlayerHasDisconnected_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GameHasStarted">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameChoiceService/GameHasStarted" message="tns:IGameChoiceService_GameHasStarted_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMapService">
+    <wsdl:operation name="GetMaps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/GetMaps" message="tns:IMapService_GetMaps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/GetMapsResponse" message="tns:IMapService_GetMaps_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IGameChoiceService" type="tns:IGameChoiceService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IGameChoiceService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="LogIn">
+      <soap12:operation soapAction="http://tempuri.org/IGameChoiceService/LogIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGames">
+      <soap12:operation soapAction="http://tempuri.org/IGameChoiceService/GetGames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameChoiceService/CreateGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryConnect">
+      <soap12:operation soapAction="http://tempuri.org/IGameChoiceService/TryConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ready">
+      <soap12:operation soapAction="http://tempuri.org/IGameChoiceService/Ready" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <soap12:operation soapAction="http://tempuri.org/IGameChoiceService/Disconnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerHasConnected">
+      <soap12:operation soapAction="http://tempuri.org/IGameChoiceService/PlayerHasConnected" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerHasDisconnected">
+      <soap12:operation soapAction="http://tempuri.org/IGameChoiceService/PlayerHasDisconnected" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GameHasStarted">
+      <soap12:operation soapAction="http://tempuri.org/IGameChoiceService/GameHasStarted" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IMapService" type="tns:IMapService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IMapService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetMaps">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/GetMaps" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CGameChoiceService">
+    <wsdl:port name="NetTcpBinding_IGameChoiceService" binding="tns:NetTcpBinding_IGameChoiceService">
+      <soap12:address location="net.tcp://localhost:1301/GameChoiceService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:1301/GameChoiceService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>PAVEL-OWN-PC\Pavel</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IMapService" binding="tns:NetTcpBinding_IMapService">
+      <soap12:address location="net.tcp://localhost:1301/MapService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:1301/MapService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>PAVEL-OWN-PC\Pavel</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

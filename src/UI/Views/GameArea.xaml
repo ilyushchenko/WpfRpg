@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="UI.Views.GameArea"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:UI.Views"
+             xmlns:internal="clr-namespace:UI.Internal"
+             xmlns:controls="clr-namespace:UI.Controls"
+             xmlns:viewModels="clr-namespace:UI.ViewModels"
+             xmlns:items="clr-namespace:Core.Models.Items;assembly=Core"
+             mc:Ignorable="d"
+             d:DesignHeight="700" d:DesignWidth="1000"
+             d:DataContext="{d:DesignInstance viewModels:BattlefieldViewModel }">
+
+    <UserControl.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Margin" Value="0,10" />
+        </Style>
+        <Style x:Key="ArrowButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="47" />
+            <Setter Property="Width" Value="47" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="200" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition MinWidth="460" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+
+        <TabControl Grid.Row="0" Grid.Column="0">
+
+            <TabItem Header="Hero">
+                <local:HeroStatus x:Name="HeroStatusView" DataContext="{Binding MyHeroViewModel}" />
+            </TabItem>
+            <TabItem Header="Inventory">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="HeroInventory"
+                             ItemsSource="{Binding MyHeroViewModel.Inventory}"
+                             Grid.Row="0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,10,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                           Height="50"
+                                           Width="50"
+                                           Source="{Binding Id, Converter={StaticResource ItemIdToImageConverter}}" />
+                                    <Label Grid.Column="1"
+                                           VerticalAlignment="Center"
+                                           FontSize="16"
+                                           Margin="10, 0"
+                                           Content="{Binding Name}" />
+                                </Grid>
+                            </DataTemplate>
+
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button Grid.Row="1"
+                            Style="{StaticResource ButtonStyle}"
+                            Content="Use" Command="{Binding UseItemCommand}"
+                            CommandParameter="{Binding ElementName=HeroInventory, Path=SelectedItem}" />
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+
+        <controls:MapControl Grid.Row="0" Grid.Column="1"
+                             x:Name="Map"
+                             Source="{Binding Map}"
+                             SelectedCell="{Binding SelectedCell}"
+                             CellClick="Map_OnCellClick" />
+
+        <local:UnitView Grid.Row="0" Grid.Column="2" DataContext="{Binding SelectedCell.Unit}" />
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Width="150" Height="150">
+
+                    <Button HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Style="{StaticResource ArrowButtonStyle}"
+                            Command="{Binding MoveCommand}"
+                            CommandParameter="{x:Static internal:EMoveDirections.Up}">
+                        <Image Source="/Images/Gui/arrow_up.png" />
+                    </Button>
+
+                    <Button HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource ArrowButtonStyle}"
+                            Command="{Binding MoveCommand}"
+                            CommandParameter="{x:Static internal:EMoveDirections.Left}">
+                        <Image Source="/Images/Gui/arrow_left.png" />
+                    </Button>
+
+                    <Button HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Grid.Column="0"
+                            Style="{StaticResource ArrowButtonStyle}"
+                            Command="{Binding MoveCommand}"
+                            CommandParameter="{x:Static internal:EMoveDirections.Down}">
+                        <Image Source="/Images/Gui/arrow_down.png" />
+                    </Button>
+
+                    <Button Grid.Row="0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource ArrowButtonStyle}"
+                            Command="{Binding MoveCommand}"
+                            CommandParameter="{x:Static internal:EMoveDirections.Right}">
+                        <Image Source="/Images/Gui/arrow_right.png" />
+                    </Button>
+                </Grid>
+            </Grid>
+
+            <GroupBox Grid.Column="1">
+
+                <StackPanel>
+                    <Button Content="Attack"
+                            Width="100"
+                            Height="30"
+                            Margin="10"
+                            Command="{Binding BattleCommand}" />
+
+                    <Button Content="Trade"
+                            Width="100"
+                            Height="30" Command="{Binding TradeCommand}" Click="TradeButton_Click" />
+                </StackPanel>
+
+            </GroupBox>
+        </Grid>
+    </Grid>
+</UserControl>

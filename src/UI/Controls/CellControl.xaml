@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="UI.Controls.CellControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:UI.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="100" d:DesignWidth="100"
+             PreviewMouseLeftButtonDown="CellControl_OnPreviewMouseLeftButtonDown">
+    <Grid Width="{Binding Size}" Height="{Binding Size}">
+
+        <Grid.InputBindings>
+            <MouseBinding Command="{Binding MakeSelected}" Gesture="LeftClick" />
+        </Grid.InputBindings>
+        <Canvas>
+            <Image x:Name="TerrainTexture"
+                   Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualWidth}"
+                   Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualHeight}"
+                   Canvas.Top="0" Canvas.Left="0" />
+            <Image x:Name="UnitTexture"
+                   Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualWidth}"
+                   Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualHeight}"
+                   Canvas.Top="0" Canvas.Left="0" />
+
+            <Border x:Name="CellSelectedBorder"
+                    Visibility="Hidden"
+                    BorderBrush="Red" BorderThickness="1"
+                    Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualWidth}"
+                    Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualHeight}" />
+        </Canvas>
+
+    </Grid>
+</UserControl>

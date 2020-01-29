@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<repositories>
+  <repository name="DataAccessLayer.Repositories.CPlayersRepository">
+    <query name="Get" value="SELECT Id, Login FROM dbo.Players WHERE Id=@id" />
+    <query name="GetAll" value="SELECT Id, Login FROM dbo.Players" />
+    <query name="Remove" value="DELETE FROM dbo.Players where Id = @id" />
+  </repository>
+  <repository name="DataAccessLayer.Repositories.CMapsRepository">
+    <query name="Get" value="SELECT Id, Name, Width, Height FROM dbo.Maps WHERE Id=@id" />
+    <query name="GetAll" value="SELECT Id, Name, Width, Height FROM dbo.Maps" />
+    <query name="Remove" value="DELETE FROM dbo.Maps where Id = @id" />
+    <query name="Update" value="Update dbo.Maps SET Name=@name, Width=@width, Height=@height WHERE Id = @id" />
+  </repository>
+  <repository name="DataAccessLayer.Repositories.CUnitsRepository">
+    <query name="Get" value="SELECT Id, Name, Type, Data FROM dbo.Units WHERE Id=@id" />
+    <query name="GetAll" value="SELECT Id, Name, Type, Data FROM dbo.Units" />
+    <query name="Remove" value="DELETE FROM dbo.Units where Id = @id" />
+    <query name="Update" value="Update dbo.Units SET Name=@name, Type=@type, Data=@data WHERE Id = @id" />
+  </repository>
+  <repository name="DataAccessLayer.Repositories.CItemsRepository">
+    <query name="Get" value="SELECT Id, Name, Cost, Type, Data FROM dbo.Items WHERE Id=@id" />
+    <query name="GetAll" value="SELECT Id, Name, Cost, Type, Data FROM dbo.Items" />
+    <query name="Remove" value="DELETE FROM dbo.Items where Id = @id" />
+    <query name="Update" value="Update dbo.Items SET Name=@name, Cost = @cost, Type=@type, Data=@data WHERE Id=@id" />
+  </repository>
+  <repository name="DataAccessLayer.Repositories.CHeroesRepository">
+    <query name="Get"
+           value="SELECT Id, Name, Type, Health, MovingEnergy, Description, Data FROM dbo.Heroes WHERE Id=@id" />
+    <query name="GetAll" value="SELECT Id, Name, Type, Health, MovingEnergy, Description, Data FROM dbo.Heroes" />
+    <query name="Remove" value="DELETE FROM dbo.Heroes where Id = @id" />
+    <query name="Update"
+           value="Update dbo.Heroes SET Name=@name,Type=@type,Health=@health,MovingEnergy=@movingEnergy,Description=@description,Data=@data WHERE Id=@id" />
+    <query name="GetByType"
+           value="SELECT Id, Name, Type, Health, MovingEnergy, Description, Data FROM dbo.Heroes WHERE Type=@type" />
+  </repository>
+</repositories>

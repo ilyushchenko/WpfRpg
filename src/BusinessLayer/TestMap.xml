@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<mapData>
+  <map>
+    <name>TestMap</name>
+    <width>11</width>
+    <height>12</height>
+  </map>
+  <cells defaultTerrain="Grass">
+    <cell x="0" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="1">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="2">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="3">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="4">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="5">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="6">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="7">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="8">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="9">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="10">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="0" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+
+    <cell x="1" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+    <cell x="1" y="1" terrain="Dirt" />
+    <cell x="1" y="2" />
+    <cell x="1" y="3" />
+    <cell x="1" y="4" />
+    <cell x="1" y="5" />
+    <cell x="1" y="6" />
+    <cell x="1" y="7" />
+    <cell x="1" y="8" />
+    <cell x="1" y="9" />
+    <cell x="1" y="10" />
+    <cell x="1" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+
+    <cell x="2" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+    <cell x="2" y="1" />
+    <cell x="2" y="2" terrain="Dirt" />
+    <cell x="2" y="3" />
+    <cell x="2" y="4" />
+    <cell x="2" y="5" />
+    <cell x="2" y="6" />
+    <cell x="2" y="7" />
+    <cell x="2" y="8" />
+    <cell x="2" y="9" />
+    <cell x="2" y="10" />
+    <cell x="2" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+
+
+    <cell x="3" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+    <cell x="3" y="1" />
+    <cell x="3" y="2" />
+    <cell x="3" y="3" terrain="Dirt">
+      <unit name="Trader" type="Trader">
+        <items>
+          <item name="T1 Splintered Club" type="Weapon" cost="100" id="0A4CFFC6-FC9C-4CEC-BBDF-EC3D16B0939A">
+            <damage>10</damage>
+          </item>
+          <item name="Small health potion" type="HealthPotion" cost="100" id="4593C0BC-B8CB-4CB0-AA6F-95EC1DCD57C4"
+                description="Small health potion" />
+          <item name="XP Book" type="XpBook" cost="200" id="085F3034-A378-4B3B-A5C6-00EA8190CA6B" description="XP Book" />
+        </items>
+      </unit>
+    </cell>
+    <cell x="3" y="4" />
+    <cell x="3" y="5" />
+    <cell x="3" y="6" />
+    <cell x="3" y="7" />
+    <cell x="3" y="8" />
+    <cell x="3" y="9" />
+    <cell x="3" y="10" />
+    <cell x="3" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+
+    <cell x="4" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+    <cell x="4" y="1"/>
+    <cell x="4" y="2"/>
+    <cell x="4" y="3"/>
+    <cell x="4" y="4" terrain="Dirt"/>
+    <cell x="4" y="5"/>
+    <cell x="4" y="6"/>
+    <cell x="4" y="7"/>
+    <cell x="4" y="8"/>
+    <cell x="4" y="9"/>
+    <cell x="4" y="10"/>
+    <cell x="4" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+
+    <cell x="5" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+    <cell x="5" y="1"/>
+    <cell x="5" y="2"/>
+    <cell x="5" y="3"/>
+    <cell x="5" y="4"/>
+    <cell x="5" y="5" terrain="Dirt"/>
+    <cell x="5" y="6"/>
+    <cell x="5" y="7"/>
+    <cell x="5" y="8"/>
+    <cell x="5" y="9"/>
+    <cell x="5" y="10"/>
+    <cell x="5" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+
+    <cell x="6" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+    <cell x="6" y="1"/>
+    <cell x="6" y="2"/>
+    <cell x="6" y="3"/>
+    <cell x="6" y="4"/>
+    <cell x="6" y="5"/>
+    <cell x="6" y="6" terrain="Dirt"/>
+    <cell x="6" y="7"/>
+    <cell x="6" y="8"/>
+    <cell x="6" y="9"/>
+    <cell x="6" y="10"/>
+    <cell x="6" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+
+    <cell x="7" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+    <cell x="7" y="1"/>
+    <cell x="7" y="2"/>
+    <cell x="7" y="3"/>
+    <cell x="7" y="4">
+      <unit name="Easy monster" type="Monster">
+        <MaxHp>50</MaxHp>
+        <Damage>10</Damage>
+        <items>
+          <item name="XP Book" type="XpBook" cost="200" id="085F3034-A378-4B3B-A5C6-00EA8190CA6B" description="XP Book" />
+        </items>
+      </unit>
+    </cell>
+    <cell x="7" y="5"/>
+    <cell x="7" y="6"/>
+    <cell x="7" y="7" terrain="Dirt"/>
+    <cell x="7" y="8"/>
+    <cell x="7" y="9"/>
+    <cell x="7" y="10"/>
+    <cell x="7" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+
+    <cell x="8" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+    <cell x="8" y="1"/>
+    <cell x="8" y="2"/>
+    <cell x="8" y="3"/>
+    <cell x="8" y="4"/>
+    <cell x="8" y="5"/>
+    <cell x="8" y="6" terrain="Dirt"/>
+    <cell x="8" y="7"/>
+    <cell x="8" y="8" terrain="Dirt"/>
+    <cell x="8" y="9"/>
+    <cell x="8" y="10"/>
+    <cell x="8" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+
+    <cell x="9" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+    <cell x="9" y="1"/>
+    <cell x="9" y="2"/>
+    <cell x="9" y="3"/>
+    <cell x="9" y="4"/>
+    <cell x="9" y="5"/>
+    <cell x="9" y="6"/>
+    <cell x="9" y="7"/>
+    <cell x="9" y="8" terrain="Dirt" />
+    <cell x="9" y="9" terrain="Dirt"/>
+    <cell x="9" y="10"/>
+    <cell x="9" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Horizontal</orientation>
+      </unit>
+    </cell>
+
+    <cell x="10" y="0">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="1">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="2">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="3">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="4">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="5">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="6">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="7">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="8">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="9">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="10">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+    <cell x="10" y="11">
+      <unit name="Wall" type="Wall">
+        <orientation>Vertical</orientation>
+      </unit>
+    </cell>
+
+  </cells>
+  <terrains>
+    <terrain type="Grass" penalty="1" />
+    <terrain type="Dirt" penalty="2" />
+  </terrains>
+</mapData>
